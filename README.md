@@ -4,26 +4,34 @@ Find K nearest people near you using OpenStreetMap.
 
 ## Quick Start
 
-### 1. Install Dependencies
+### 1. Set Up Virtual Environment (Recommended)
+```bash
+python -m venv .venv
+# Windows
+.venv\Scripts\activate
+# Linux/Mac
+source .venv/bin/activate
+```
+
+### 2. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Run the App
+### 3. Run the App
 
-**Windows**:
+**With Virtual Environment**:
 ```bash
-run.bat
+# Windows
+.venv\Scripts\uvicorn main:app --reload --port 8000
+
+# Linux/Mac
+.venv/bin/uvicorn main:app --reload --port 8000
 ```
 
-**Linux/Mac**:
+**Without Virtual Environment**:
 ```bash
-./run.sh
-```
-
-**Or directly**:
-```bash
-set PYTHONPATH=%CD% && python -m uvicorn main:app --reload --port 8000
+uvicorn main:app --reload --port 8000
 ```
 
 ### 3. Open Browser
@@ -52,7 +60,7 @@ http://localhost:8000
 ## Project Structure
 
 ```
-myproject/
+DevLocate/
 ├── main.py              # All backend logic
 ├── static/              # CSS and JavaScript
 │   ├── css/style.css
@@ -82,5 +90,9 @@ myproject/
 ## Demo Data
 
 15 sample users in NYC area for testing.
+
+## License
+
+MIT License
 
 That's it! Simple, clean, efficient. 🚀
